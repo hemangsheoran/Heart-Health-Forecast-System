@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Heart Health Risk Forecast System</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Heart Health Risk Forecast System</span></h2>
+			<br>
+            <div class='description'>
+    			<p>A Machine Learning Hybrid model Web Application that predicits chances of having heart Disease or not, Built with Flask.</p>
+    		</div>
+		</div>
+
+
+		<div class="results">
+			{% if prediction==2 %}
+				<h1>Final Prediction: <span class='danger'>Warning!! You have Chances of Heart Disease.</span></h1>
+
+
+			{% elif prediction==1 %}
+				<h1>Final Prediction: <span style="color: #ff8400;">You may or may not have Heart Disease</span></h1>
+				
+			{% elif prediction==0 %}
+				<h1>Final Prediction: <span class='safe'>Congratulations! You don't have chances of Heart Disease.</span></h1>
+				
+			{% endif %}
+            <br>
+			<h2>Chances of Heart Disease: <span style="color: #00e5ff;">{{accurate}} %</span></h2>
+			<br>
+            <br>
+
+
+			<div style="width: 45%; background-color: #daf3f5; margin: 0 auto; border: 2px dashed #000; border-radius: 15px; padding: 10px; text-align: left;
+box-sizing: border-box; ">
+
+			{% if layer_2==1 %}
+				<h3>The result of CNN+SVM 2 layer hybrid model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif layer_2==0 %}
+				<h3>The result of CNN+SVM 2 layer hybrid model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			{% if layer_4==1 %}
+				<h3>The result of CNN+SVM 4 layer hybrid model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif layer_4==0 %}
+				<h3>The result of CNN+SVM 4 layer hybrid model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+
+			{% if layer_8==1 %}
+				<h3>The result of CNN+SVM 8 layer hybrid model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif layer_8==0 %}
+				<h3>The result of CNN+SVM 8 layer hybrid model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			{% if layer_16==1 %}
+				<h3>The result of CNN+SVM 16 layer hybrid model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif layer_16==0 %}
+				<h3>The result of CNN+SVM 16 layer hybrid model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			{% if layer_24==1 %}
+				<h3>The result of CNN+SVM 24 layer hybrid model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif layer_24==0 %}
+				<h3>The result of CNN+SVM 24 layer hybrid model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			{% if xgboost==1 %}
+				<h3>The result of XGboost model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif xgboost==0 %}
+				<h3>The result of XGboost model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			{% if logistic==1 %}
+				<h3>The result of Logistic Regression model is: <span class='danger'>Disease Found</span></h3>
+
+			{% elif logistic==0 %}
+				<h3>The result of Logistic Regression model is: <span class='safe'>Disease not Found</span></h3>
+
+			{% endif %}
+
+
+			</div>
+			<br>
+
+		</div>
+
+
+       <div class='footer'>
+           <div class="contact">
+           <!--     <a target="_blank" href="link "><i class="fab fa-github fa-lg contact-icon"></i></a> -->
+               <a target="_blank" href="https://www.linkedin.com/in/hemang-sheoran"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+			   <a target="_blank" href="https://www.linkedin.com/in/harikesh-kumar-6b708319b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+			   <a target="_blank" href="https://www.linkedin.com/in/harshrathi6217/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+
+           </div>
+           <p class='footer-description'>Minor Project made by Hemang, Harikesh and Harsh</p>
+       </div>
+
+	</body>
+</html>
